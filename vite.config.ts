@@ -1,10 +1,14 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
-import {defineConfig} from 'vite';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'vite';
 
-export default defineConfig(() => {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default defineConfig(({ mode }) => {
   return {
+    base: process.env.GITHUB_ACTIONS ? '/ring-sync-reactor-core/' : (mode === 'production' ? './' : '/'),
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
