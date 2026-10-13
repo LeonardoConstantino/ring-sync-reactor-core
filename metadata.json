@@ -1,0 +1,6 @@
+{
+  "name": "Ring Sync: Reactor Core",
+  "description": "Cyberpunk precision timing & rhythm arcade game. Stabilize emergency nuclear reactors and city generators by synchronizing concentric rotating rings before total power grid collapse.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

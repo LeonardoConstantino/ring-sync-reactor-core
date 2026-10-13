@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-void: #0A0A0F;
+    --color-cyan: #00F5D4;
+    --color-orange: #FF6B00;
+    --color-red: #FF2244;
+    --color-white: #F4F7F5;
+    --color-violet: #6C4AB6;
+    --color-glitch: #596168;
+    --font-display: 'Chakra Petch', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0A0A0F;
+    color: #F4F7F5;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+}
+
+.font-display {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle CRT Scanline effect */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 26, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Radial Vignette */
+.reactor-vignette {
+  background: radial-gradient(
+    circle at center,
+    transparent 45%,
+    rgba(10, 10, 15, 0.75) 85%,
+    rgba(10, 10, 15, 0.98) 100%
+  );
+  pointer-events: none;
+}
+
+/* Warning Glow animation */
+@keyframes warningPulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.45; }
+}
+
+.animate-warning-pulse {
+  animation: warningPulse 1.2s infinite ease-in-out;
+}
